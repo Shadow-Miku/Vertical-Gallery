@@ -1,13 +1,21 @@
 /*------------------ Global styles ------------------*/
+:root {
+  --bkg-color: #1b1d1f;
+  --header-color: #161515fd;
+  --title-color: #88888a;
+  --font-color: #ffffff;
+  --after-color: #393d40;
+}
+
 body {
   margin: 0;
-  background-color: #000000;
+  background-color: var(--bkg-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #fff;
+  color: var(--font-color);
 }
 
 /*------------------ Header ------------------*/
@@ -16,8 +24,9 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #1f1d1dfd;
+  background-color: var(--header-color);
   width: 100%;
+  z-index: 10;
 }
 
 header .inner {
@@ -38,7 +47,7 @@ header nav a {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--font-color);
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
@@ -75,7 +84,7 @@ header nav a:hover,
   } /* Violet */
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1100px) {
   header nav {
     display: block;
   }
@@ -100,13 +109,13 @@ header .burger:hover {
   background: #ffffff;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1100px) {
   header .burger {
     display: none;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1100px) {
   header .burger {
     display: none;
   }
@@ -121,7 +130,7 @@ header .login {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--font-color);
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
@@ -130,7 +139,7 @@ header .login {
   z-index: 10;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   header .login {
     display: none;
   }
@@ -157,7 +166,7 @@ header nav.active {
   left: 0;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1100px) {
   header nav {
     position: relative;
     top: unset;
@@ -197,7 +206,7 @@ header nav .close-menu {
   right: 10px;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--font-color);
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 10;
@@ -209,10 +218,117 @@ header nav .close-menu:hover {
 }
 
 /* Mostrar el botón solo en resoluciones pequeñas */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   header nav .close-menu {
     display: block; /* Se muestra solo en dispositivos pequeños */
   }
+}
+
+/*------------------ Main content ------------------*/
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* Para evitar que elementos sobresalgan del contenedor */
+}
+
+#slider {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Asegúrate de que el slider esté en un nivel superior a la imagen */
+}
+
+#slider canvas {
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Más alto que la imagen, pero más bajo que el contenido del slider */
+}
+
+#slider img {
+  width: 100%;
+  max-width: 100%;
+  position: absolute; /* Cambiado de relativo a absoluto para colocarlo detrás */
+  top: 0;
+  left: 0;
+  z-index: 0; /* Asegúrate de que la imagen esté detrás */
+}
+
+@media screen and (max-width: 1100px) {
+  #slider img {
+    height: auto; /* Permite que la altura sea dinámica */
+    width: 100%; /* Llena todo el ancho del contenedor */
+    top: 10%; /* Centra verticalmente */
+    max-width: 150%; /* Permite un margen para ajustes */
+    object-fit: contain; /* Cambia el ajuste de la imagen para que siempre se vea completa */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #slider img {
+    height: auto; /* Permite que la altura sea dinámica */
+    width: 200%; /* Llena todo el ancho del contenedor */
+    top: 10%; /* Centra verticalmente */
+    max-width: 150%; /* Permite un margen para ajustes */
+    object-fit: contain; /* Cambia el ajuste de la imagen para que siempre se vea completa */
+  }
+}
+
+.slider-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 66.5rem;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 5; /* Elemento más alto dentro del slider */
+}
+
+#slider-content {
+  padding: 0 10px;
+  position: relative;
+  z-index: 6; /* Contenido del slider por encima de todos */
+}
+
+#slider-content p {
+  display: block;
+  font-family: system-ui;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  color: var(--font-color);
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 5px;
+  max-width: 22rem;
+  word-wrap: break-word;
+}
+
+#slider-content .sldCont-I {
+  display: inline-block;
+  font-family: system-ui;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  color: var(--title-color);
+  text-transform: uppercase;
+  position: relative;
+}
+
+#slider-content .sldCont-I::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.8rem;
+  right: -3.438rem;
+  width: 2.813rem;
+  height: 0.125rem;
+  background: var(--after-color);
 }
 
 /*------------------ Preloader styles ------------------*/
