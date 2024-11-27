@@ -2,9 +2,11 @@
 :root {
   --bkg-color: #1b1d1f;
   --header-color: #161515fd;
-  --title-color: #88888a;
+  --title-color: #989899;
   --font-color: #ffffff;
   --after-color: #393d40;
+  --slider-bg-color: #10111191;
+  --selector-color: #00a9c0;
 }
 
 body {
@@ -262,21 +264,22 @@ main {
 
 @media screen and (max-width: 1100px) {
   #slider img {
-    height: auto; /* Permite que la altura sea dinámica */
-    width: 100%; /* Llena todo el ancho del contenedor */
-    top: 10%; /* Centra verticalmente */
-    max-width: 150%; /* Permite un margen para ajustes */
-    object-fit: contain; /* Cambia el ajuste de la imagen para que siempre se vea completa */
+    height: auto;
+    width: 100%;
+    top: 10%;
+    max-width: 150%;
+    object-fit: contain;
   }
 }
 
 @media screen and (max-width: 800px) {
   #slider img {
-    height: auto; /* Permite que la altura sea dinámica */
-    width: 200%; /* Llena todo el ancho del contenedor */
-    top: 10%; /* Centra verticalmente */
-    max-width: 150%; /* Permite un margen para ajustes */
-    object-fit: contain; /* Cambia el ajuste de la imagen para que siempre se vea completa */
+    height: auto;
+    width: 200%;
+    left: -20%;
+    top: 10%;
+    max-width: 150%;
+    object-fit: contain;
   }
 }
 
@@ -295,6 +298,9 @@ main {
   padding: 0 10px;
   position: relative;
   z-index: 6; /* Contenido del slider por encima de todos */
+  background-color: var(--slider-bg-color);
+  border-radius: 0px 98px 51px 25px;
+  padding: 0.5rem;
 }
 
 #slider-content p {
@@ -329,6 +335,64 @@ main {
   width: 2.813rem;
   height: 0.125rem;
   background: var(--after-color);
+}
+
+/* Selector de imagenes */
+
+#selector {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.8rem;
+  z-index: 6;
+}
+
+#selector button {
+  display: block;
+  appearance: none;
+  border: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--selector-color);
+  border-radius: 22% 78% 30% 70% / 64% 62% 38% 36%;
+  padding: 0;
+  margin: 2rem 0;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+  outline: none;
+}
+
+#selector button:hover {
+  opacity: 0.8;
+}
+
+#selector button.active {
+  opacity: 1;
+  border-radius: 91% 9% 82% 18% / 50% 46% 54% 50%;
+}
+
+#selector button.active:before {
+  width: 300%;
+  height: 300%;
+  opacity: 1;
+}
+
+#selector button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 91% 9% 82% 18% / 50% 46% 54% 50%;
+  border: 1px solid var(--header-color);
+  opacity: 0;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 /*------------------ Preloader styles ------------------*/

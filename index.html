@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link
       rel="icon"
-      href="./assets/images/GKGs9EfWIAAKL5M.jpeg"
+      href="./assets/images/page-icon.jpeg"
       type="image/x-icon"
     />
   </head>
@@ -44,13 +44,13 @@
         <div class="slider-inner">
           <div id="slider-content">
             <!-- Contenido estatico -->
-            <div class="sldCont-I">Alfa</div>
+            <div class="sldCont-I">Nombre</div>
             <!-- Contenido dinamico -->
-            <h2>Title</h2>
+            <h2 id="data-slide-title">Title</h2>
             <!-- Contenido estatico -->
-            <div class="sldCont-I">Beta</div>
+            <div class="sldCont-I">Descripción</div>
             <!-- Contenido dinamico -->
-            <p>
+            <p id="data-slide-text">
               Montes habitasse quam himenaeos tempor aptent cursus elementum
               mollis, posuere velit natoque interdum gravida molestie faucibus
               sapien, fringilla volutpat eleifend curae eros magna nisl.
@@ -64,8 +64,11 @@
         <!-- Imagenes dinamicas -->
         <img src="./assets/images/img-0.png" alt="images" />
         <!-- Selector -->
-        <div class="selector">
-          <button></button>
+        <div id="selector">
+          <button class="active" data-slide="0"></button>
+          <button data-slide="1"></button>
+          <button data-slide="2"></button>
+          <button data-slide="3"></button>
         </div>
       </div>
     </main>
