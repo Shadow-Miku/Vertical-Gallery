@@ -395,6 +395,50 @@ main {
     opacity 0.3s ease-in-out;
 }
 
+/* Estilo para el botón "Cargar más" */
+#selector .load-more {
+  background-color: #4caf50; /* Verde */
+  display: block;
+  appearance: none;
+  border: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 22% 78% 30% 70% / 64% 62% 38% 36%;
+  padding: 0;
+  margin: 2rem 0;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+  outline: none;
+}
+
+#selector .load-more:hover {
+  background-color: #45a049; /* Verde más oscuro en hover */
+}
+
+/* Estilo para el botón "Cargar menos" */
+#selector .load-less {
+  background-color: #f44336; /* Rojo */
+  display: block;
+  appearance: none;
+  border: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 22% 78% 30% 70% / 64% 62% 38% 36%;
+  padding: 0;
+  margin: 2rem 0;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+  outline: none;
+}
+
+#selector .load-less:hover {
+  background-color: #e53935; /* Rojo más oscuro en hover */
+}
+
 /*------------------ Preloader styles ------------------*/
 .loader {
   position: fixed;
