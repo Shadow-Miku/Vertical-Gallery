@@ -439,6 +439,42 @@ main {
   background-color: #e53935; /* Rojo más oscuro en hover */
 }
 
+/* Estilo para dispositivos con pantallas pequeñas */
+@media screen and (max-width: 800px) {
+  #selector {
+    display: none; /* Ocultar el selector actual */
+  }
+
+  #mobile-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    z-index: 10;
+  }
+
+  #mobile-selector button {
+    background-color: #ffffff;
+    border: none;
+    font-size: 2rem;
+    color: #333333;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 16% 84% 13% 87% / 90% 8% 92% 10%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  #mobile-selector button:hover {
+    transform: scale(1.2); /* Animación al pasar el cursor */
+  }
+}
+
 /*------------------ Preloader styles ------------------*/
 .loader {
   position: fixed;

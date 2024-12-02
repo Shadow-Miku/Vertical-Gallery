@@ -197,3 +197,40 @@ document.addEventListener("DOMContentLoaded", () => {
   updateContent(currentIndex); // Mostrar el contenido inicial
   updateSelectorButtons(); // Inicializar los botones del selector
 });
+
+// Detectar el tamaño de la pantalla para activar el selector móvil
+function updateMobileSelector() {
+  const mobileSelector = document.getElementById("mobile-selector");
+  if (window.innerWidth <= 800) {
+    mobileSelector.style.display = "flex";
+  } else {
+    mobileSelector.style.display = "none";
+  }
+}
+
+// Manejar navegación con flechas en dispositivos pequeños
+document.getElementById("mobile-prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + data.length) % data.length; // Navegación cíclica
+  if (currentIndex < startIndex) {
+    startIndex--;
+  }
+  updateContent(currentIndex);
+  updateSelectorButtons();
+});
+
+document.getElementById("mobile-next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % data.length; // Navegación cíclica
+  if (currentIndex >= startIndex + visibleButtons) {
+    startIndex++;
+  }
+  updateContent(currentIndex);
+  updateSelectorButtons();
+});
+
+// Escuchar cambios de tamaño en la ventana
+window.addEventListener("resize", updateMobileSelector);
+
+// Inicializar el comportamiento al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  updateMobileSelector();
+});
