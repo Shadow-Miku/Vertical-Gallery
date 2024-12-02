@@ -47,39 +47,52 @@ document.addEventListener("DOMContentLoaded", () => {
 // Array de objetos con los datos de cada personaje
 const data = [
   {
-    "data-slide-title": "personaje0",
-    "data-slide-text": "Descripción del personaje 0",
-    img: "./assets/images/img-0.png",
+    "data-slide-title": "Noelle",
+    "data-slide-text":
+      "Extremely strong and reliable, Noelle is considered to be 'the maid of all maids' in the Knights of Favonius, with many thinking she has the ability to be everywhere all at once. ",
+    img: "./assets/images/img-0.jpg",
   },
   {
-    "data-slide-title": "personaje1",
-    "data-slide-text": "Descripción del personaje 1",
-    img: "./assets/images/img-1.jpg",
+    "data-slide-title": "Yotsuba Nakano",
+    "data-slide-text":
+      "She is the fourth sister of the Nakano quintuplets. She has a sparkling and cheerful personality.",
+    img: "./assets/images/img-1.png",
   },
   {
-    "data-slide-title": "personaje2",
-    "data-slide-text": "Descripción del personaje 2",
-    img: "./assets/images/img-2.png",
+    "data-slide-title": "Hifumi Takimoto",
+    "data-slide-text":
+      "Hifumi is a very shy and self-conscious girl. She is always shy and doesn't talk much to others, as she is not very sociable, but deep down she is very friendly and cheerful. ",
+    img: "./assets/images/img-2.jpg",
   },
   {
-    "data-slide-title": "personaje3",
-    "data-slide-text": "Descripción del personaje 3",
+    "data-slide-title": "Mafuyu Hoshikawa",
+    "data-slide-text":
+      "Mafuyu is a mature and wise girl, she is characteristically very intelligent, her appearance is often deceptive and she is actually an older girl whose appearance allows her to deceive with her sweetness. ",
     img: "./assets/images/img-3.jpg",
   },
   {
-    "data-slide-title": "personaje4",
-    "data-slide-text": "Descripción del personaje 4",
+    "data-slide-title": "Chiori ",
+    "data-slide-text":
+      "Chiori is a talented girl, she has a dedicated personality and never gives up easily in the face of challenges, her passion and creativity have driven her to pursue her dream, she always maintains a positive attitude and great dedication to her goals.",
     img: "./assets/images/img-4.png",
   },
   {
-    "data-slide-title": "personaje5",
-    "data-slide-text": "Descripción del personaje 5",
-    img: "./assets/images/img-5.jpg",
+    "data-slide-title": "GwenPool",
+    "data-slide-text":
+      "A girl from the real world transported to the Marvel Universe, Marvel initially produced two stories featuring Gwenpool as a character.",
+    img: "./assets/images/img-8.jpg",
   },
   {
-    "data-slide-title": "personaje6",
-    "data-slide-text": "Descripción del personaje 6",
+    "data-slide-title": "MNF Mogador ",
+    "data-slide-text":
+      "Mogador was the lead ship of the French Navy's Mogador class of large destroyers (contre-torpilleurs). Named after the Moroccan town, she was built before the outbreak of World War II.",
     img: "./assets/images/img-6.jpg",
+  },
+  {
+    "data-slide-title": "ACR",
+    "data-slide-text":
+      "ACR states that she is a calm and level headed T-Doll at all times, she will always look at problems from other people's perspective and she believes anger is a sign of incompetence.",
+    img: "./assets/images/img-7.png",
   },
   // Aqui se pueden agregar más personajes o elementos a la galería
 ];

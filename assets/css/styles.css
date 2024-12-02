@@ -291,6 +291,10 @@ main {
     max-width: 150%;
     object-fit: contain;
   }
+  #slider-content {
+    padding: 1rem;
+    margin-left: 1rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -321,7 +325,8 @@ main {
   z-index: 6; /* Contenido del slider por encima de todos */
   background-color: var(--slider-bg-color);
   border-radius: 0px 98px 51px 25px;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  max-width: 28rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -336,21 +341,44 @@ main {
   font-size: 1rem;
   letter-spacing: 5px;
   color: var(--font-color);
-  text-transform: uppercase;
   position: relative;
   margin-bottom: 5px;
   max-width: 22rem;
   word-wrap: break-word;
 }
 
+#slider-content h2 {
+  font-family: "acta-display", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+  #slider-content h2 {
+    font-size: 6rem;
+  }
+}
+
 #slider-content .sldCont-I {
   display: inline-block;
   font-family: system-ui;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 5px;
   color: var(--title-color);
   text-transform: uppercase;
   position: relative;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  #slider-content .sldCont-I {
+    font-size: 0.8rem;
+  }
+  #slider-content {
+    padding: 1rem;
+    margin-left: 1rem;
+  }
 }
 
 #slider-content .sldCont-I::after {
